@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#c2c5a6">
+  <meta name="description" content="Цифровое меню Coffella в Астане: кофе, завтраки, сэндвичи и десерты. Демонстрационная версия.">
+  <title>Coffella — Меню</title>
+  <link rel="icon" href="assets/coffella-logotype.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="menu-data.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#menu" data-i18n="skip">Перейти к меню</a>
+  <header class="header">
+    <a class="brand" href="#menu" aria-label="Coffella"><img class="brand-logo" src="assets/coffella-logotype.svg" alt="Coffella" width="180" height="41"></a>
+    <div class="languages" role="group" aria-label="Язык" id="languages">
+      <button type="button" data-lang="ru" lang="ru" aria-label="Русский" aria-pressed="true">RU</button>
+      <button type="button" data-lang="kk" lang="kk" aria-label="Қазақша" aria-pressed="false">KZ</button>
+      <button type="button" data-lang="en" lang="en" aria-label="English" aria-pressed="false">EN</button>
+    </div>
+  </header>
+  <main>
+    <section class="intro" id="intro" aria-labelledby="intro-title">
+      <div class="intro-copy">
+        <p class="eyebrow" data-i18n="intro">COFFELLA · АСТАНА</p>
+        <h1 id="intro-title" data-i18n="heroTitle">Кофе. Завтраки.<br>Ваше время.</h1>
+        <p class="intro-description" data-i18n="welcome">Любимый кофе, завтраки и десерты — выбирайте то, что хочется сегодня.</p>
+        <a class="intro-button" href="#menu"><span data-i18n="viewMenu">Смотреть меню</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 4v16m-6-6 6 6 6-6"/></svg></a>
+        <a class="location-link" href="#visit"><span data-i18n="address">Астана, ул. Шамши Калдаякова, 8</span></a>
+      </div>
+      <div class="intro-visual"><img class="intro-photo" src="assets/coffee.jpg" alt="Кофе — иллюстративное фото" width="700" height="700" fetchpriority="high"><span class="photo-label">COFFELLA</span></div>
+    </section>
+    <section id="menu" class="menu-section" aria-labelledby="menu-title">
+      <div class="menu-heading"><div><p class="eyebrow" data-i18n="menuEyebrow">ВЫБИРАЙТЕ ПО ВКУСУ</p><h2 id="menu-title" data-i18n="menuHeading">Меню</h2></div><a class="about-link" href="#intro" data-i18n="about">О кофейне</a></div>
+    <p class="demo-note" data-i18n="preview">Превью: блюда и фото временные, актуальное меню скоро.</p>
+    <div class="menu-toolbar"><label class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input id="search" type="search" placeholder="Поиск по меню" aria-label="Поиск по меню" autocomplete="off"></label><nav class="categories" aria-label="Категории меню" id="categories"></nav></div>
+    <div class="results-heading"><h2 id="category-title">Всё меню</h2><span id="result-count" role="status" aria-live="polite"></span></div>
+    <div class="menu-grid" id="menu-grid"></div>
+    <div id="empty-state" class="empty-state" hidden><h2 data-i18n="empty">Ничего не нашлось</h2><p data-i18n="emptyHint">Попробуйте другое название или категорию.</p><button id="reset-search" class="text-button" data-i18n="reset">Сбросить поиск</button></div>
+    <noscript><p>Для просмотра меню включите JavaScript. / Мәзірді көру үшін JavaScript қосыңыз. / Enable JavaScript to view the menu.</p></noscript>
+    <p class="menu-footnote" data-i18n="allergy">Если у вас есть аллергия, сообщите об этом бариста.</p>
+    </section>
+  </main>
+  <footer id="visit"><div><img class="footer-logo" src="assets/coffella-logotype.svg" alt="Coffella" width="150" height="34"><p data-i18n="address">Астана, ул. Шамши Калдаякова, 8</p></div><div class="contacts"><a href="https://yandex.kz/maps/ru/org/coffella/6292859756/" target="_blank" rel="noopener noreferrer"><span data-i18n="directions">На карте</span></a><a href="tel:+77015410745">+7 (701) 541-07-45</a></div><small data-i18n="hours">Перед визитом уточните часы работы.</small></footer>
+  <dialog id="dish-dialog" aria-labelledby="dish-title"><button class="dialog-close" aria-label="Закрыть"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button><img id="dish-image" alt=""><div class="dialog-content"><p class="eyebrow" id="dish-category"></p><h2 id="dish-title"></h2><p id="dish-description"></p><div class="dish-meta"><span id="dish-size"></span><b id="dish-price"></b></div><p class="dialog-note" data-i18n="dishNote">Пример блюда. Состав, порция и цена будут уточнены.</p></div></dialog>
+</body>
+</html>
